@@ -46,14 +46,14 @@ FunShop is a mini full-stack e-commerce application that demonstrates real-world
 ╔══════════════════════════════════════════════════════════════════════════╗
 ║                    BROWSER  —  Next.js 16  (port 3000)                   ║
 ║                                                                          ║
-║  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────────┐   ║
-║  │  Product List    │  │  Product Detail  │  │  Cart / Auth Pages   │   ║
-║  │                  │  │                  │  │                      │   ║
-║  │  SSR             │  │  SSG (ISR 1h)    │  │  Client-side         │   ║
+║  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────────┐    ║
+║  │  Product List    │  │  Product Detail  │  │  Cart / Auth Pages   │    ║
+║  │                  │  │                  │  │                      │    ║
+║  │  SSR             │  │  SSG (ISR 1h)    │  │  Client-side         │    ║
 ║  │  Infinite scroll │  │  Image gallery   │  │  Zustand + localStorage│  ║
-║  │  URL filter state│  │  Add to Cart     │  │  httpOnly JWT cookie │   ║
-║  │  Sticky sidebar  │  │  Dynamic meta    │  │  Middleware guard    │   ║
-║  └──────────────────┘  └──────────────────┘  └──────────────────────┘   ║
+║  │  URL filter state│  │  Add to Cart     │  │  httpOnly JWT cookie │    ║
+║  │  Sticky sidebar  │  │  Dynamic meta    │  │  Middleware guard    │    ║
+║  └──────────────────┘  └──────────────────┘  └──────────────────────┘    ║
 ║                                                                          ║
 ║  React · TypeScript · Tailwind CSS · Zustand · Axios                     ║
 ╚═══════════════════════╦══════════════════════════════════════════════════╝
@@ -61,14 +61,14 @@ FunShop is a mini full-stack e-commerce application that demonstrates real-world
 ╔═══════════════════════╩══════════════════════════════════════════════════╗
 ║                  BACKEND API  —  FastAPI  (port 8000)                    ║
 ║                                                                          ║
-║  ┌───────────────────┐  ┌──────────────────────┐  ┌──────────────────┐  ║
-║  │   /api/auth       │  │   /api/products      │  │  /api/categories │  ║
-║  │                   │  │                      │  │                  │  ║
-║  │  POST /register   │  │  GET / (paginated)   │  │  GET /           │  ║
-║  │  POST /login      │  │  GET /{id}           │  │  slug · name     │  ║
-║  │  GET  /me         │  │  ?search · ?category │  │                  │  ║
-║  │  JWT HS256        │  │  ?page  · ?limit     │  │                  │  ║
-║  └───────────────────┘  └──────────────────────┘  └──────────────────┘  ║
+║  ┌───────────────────┐  ┌──────────────────────┐  ┌──────────────────┐   ║
+║  │   /api/auth       │  │   /api/products      │  │  /api/categories │   ║
+║  │                   │  │                      │  │                  │   ║
+║  │  POST /register   │  │  GET / (paginated)   │  │  GET /           │   ║
+║  │  POST /login      │  │  GET /{id}           │  │  slug · name     │   ║
+║  │  GET  /me         │  │  ?search · ?category │  │                  │   ║
+║  │  JWT HS256        │  │  ?page  · ?limit     │  │                  │   ║
+║  └───────────────────┘  └──────────────────────┘  └──────────────────┘   ║
 ║                                                                          ║
 ║  SQLAlchemy 2 (async) · Alembic · Pydantic · python-jose · bcrypt        ║
 ╚═══════════════════════╦══════════════════════════════════════════════════╝
