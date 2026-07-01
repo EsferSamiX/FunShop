@@ -150,16 +150,17 @@ export default async function ProductDetailPage({
             </div>
           )}
 
-          {/* Add to Cart */}
-          <AddToCartButton product={product} />
+          {/* Actions */}
+          <div className="flex flex-wrap items-center gap-3">
+            <AddToCartButton product={product} />
 
-          {/* Back link */}
-          <Link
-            href="/products"
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-md transition-colors"
-          >
-            ← Back to Products
-          </Link>
+            <Link
+              href="/products"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-md transition-colors"
+            >
+              ← Back to Products
+            </Link>
+          </div>
         </div>
       </div>
     </div>

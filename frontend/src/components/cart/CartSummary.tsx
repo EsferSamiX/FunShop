@@ -56,7 +56,7 @@ export default function CartSummary() {
 
       <button
         onClick={clearCart}
-        className="w-full py-2 text-xs text-gray-400 hover:text-red-500 transition-colors"
+        className="w-full py-2.5 bg-red-600 hover:bg-red-700 text-white text-sm font-semibold rounded-xl transition-colors"
       >
         Clear cart
       </button>

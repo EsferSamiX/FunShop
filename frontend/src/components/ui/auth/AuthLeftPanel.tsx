@@ -1,23 +1,6 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Logo from '@/components/ui/Logo'
-
-const features = [
-  {
-    icon: '🏷️',
-    title: 'Exclusive Deals',
-    desc: 'Access members-only offers and discounts.',
-  },
-  {
-    icon: '🚚',
-    title: 'Fast Delivery',
-    desc: 'Quick and reliable delivery to your doorstep.',
-  },
-  {
-    icon: '🔒',
-    title: 'Secure & Safe',
-    desc: 'Your data and payments are always protected.',
-  },
-]
 
 interface AuthLeftPanelProps {
   subtitle: string
@@ -39,31 +22,19 @@ export default function AuthLeftPanel({ subtitle }: AuthLeftPanelProps) {
           </h2>
         </div>
         <p className="text-gray-500 text-sm leading-relaxed max-w-xs">{subtitle}</p>
-
-        <ul className="space-y-4">
-          {features.map(f => (
-            <li key={f.title} className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-lg shrink-0">
-                {f.icon}
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-gray-900">{f.title}</p>
-                <p className="text-xs text-gray-500">{f.desc}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
       </div>
 
       {/* Illustration */}
       <div className="flex justify-center z-10">
-        <Image
-          src="/main_logo.png"
-          alt="FunShop illustration"
-          width={200}
-          height={200}
-          className="object-contain opacity-90"
-        />
+        <Link href="/products">
+          <Image
+            src="/main_logo.png"
+            alt="FunShop illustration"
+            width={200}
+            height={200}
+            className="object-contain opacity-90"
+          />
+        </Link>
       </div>
     </div>
   )

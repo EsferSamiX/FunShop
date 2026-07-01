@@ -1,10 +1,23 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { useFilters } from '@/hooks/useFilters'
 import type { Category } from '@/types/product'
 
 export default function ProductFilters({ categories }: { categories: Category[] }) {
   const { search, category, setFilter, clearFilters } = useFilters()
+  const [searchInput, setSearchInput] = useState(search)
+
+  useEffect(() => {
+    setSearchInput(search)
+  }, [search])
+
+  useEffect(() => {
+    if (searchInput === search) return
+    const timeout = setTimeout(() => setFilter('search', searchInput), 300)
+    return () => clearTimeout(timeout)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchInput])
 
   return (
     <aside className="w-full lg:w-60 shrink-0">
@@ -26,8 +39,8 @@ export default function ProductFilters({ categories }: { categories: Category[] 
           <label className="text-sm font-medium text-gray-700">Search</label>
           <input
             type="text"
-            value={search}
-            onChange={e => setFilter('search', e.target.value)}
+            value={searchInput}
+            onChange={e => setSearchInput(e.target.value)}
             placeholder="Search products..."
             className="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
           />
