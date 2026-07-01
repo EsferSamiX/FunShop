@@ -156,9 +156,9 @@ export default async function ProductDetailPage({
           {/* Back link */}
           <Link
             href="/products"
-            className="text-sm text-gray-400 hover:text-[#2563EB] transition-colors text-center"
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-md transition-colors"
           >
-            ← Back to products
+            ← Back to Products
           </Link>
         </div>
       </div>
