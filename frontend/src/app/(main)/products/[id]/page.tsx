@@ -156,7 +156,7 @@ export default async function ProductDetailPage({
 
             <Link
               href="/products"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-md transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#2563EB] hover:bg-blue-700 text-white text-sm font-semibold rounded-md transition-colors"
             >
               ← Back to Products
             </Link>

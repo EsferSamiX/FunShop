@@ -26,7 +26,6 @@ export default function AddToCartButton({ product }: { product: Product }) {
   const handleAdd = () => {
     addItem(product, quantity)
     setAdded(true)
-    setTimeout(() => setAdded(false), 1500)
   }
 
   return (
@@ -34,7 +33,8 @@ export default function AddToCartButton({ product }: { product: Product }) {
       <div className="flex items-center border border-gray-200 rounded-xl overflow-hidden">
         <button
           onClick={() => setQuantity(q => Math.max(1, q - 1))}
-          className="w-9 h-9 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors"
+          disabled={added}
+          className="w-9 h-9 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
         >
           −
         </button>
@@ -43,7 +43,8 @@ export default function AddToCartButton({ product }: { product: Product }) {
         </span>
         <button
           onClick={handleIncrement}
-          className="w-9 h-9 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors"
+          disabled={added}
+          className="w-9 h-9 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
         >
           +
         </button>
@@ -51,9 +52,10 @@ export default function AddToCartButton({ product }: { product: Product }) {
 
       <button
         onClick={handleAdd}
+        disabled={added}
         className={`py-2.5 px-6 rounded-xl font-semibold text-sm transition-all duration-300 ${
           added
-            ? 'bg-green-500 text-white'
+            ? 'bg-green-500 text-white cursor-not-allowed'
             : 'bg-[#2563EB] hover:bg-blue-700 text-white'
         }`}
       >

@@ -5,7 +5,7 @@ import { useCartStore } from '@/store/cartStore'
 import type { CartItem as CartItemType } from '@/types/cart'
 
 export default function CartItem({ item }: { item: CartItemType }) {
-  const { removeItem } = useCartStore()
+  const { removeItem, updateQuantity } = useCartStore()
   const { product, quantity } = item
 
   return (
@@ -29,8 +29,25 @@ export default function CartItem({ item }: { item: CartItemType }) {
         </h3>
 
         <div className="flex items-center justify-between">
-          {/* Quantity */}
-          <span className="text-sm text-gray-600">Qty: {quantity}</span>
+          {/* Quantity controls */}
+          <div className="flex items-center border border-gray-200 rounded-xl overflow-hidden">
+            <button
+              onClick={() => updateQuantity(product.id, quantity - 1)}
+              className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors"
+            >
+              −
+            </button>
+            <span className="w-8 h-8 flex items-center justify-center text-sm font-semibold">
+              {quantity}
+            </span>
+            <button
+              onClick={() => updateQuantity(product.id, Math.min(quantity + 1, product.stock))}
+              disabled={quantity >= product.stock}
+              className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              +
+            </button>
+          </div>
 
           <div className="flex items-center gap-4">
             <span className="text-sm font-bold text-[#2563EB]">
